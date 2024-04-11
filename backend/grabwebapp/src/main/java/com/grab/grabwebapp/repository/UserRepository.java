@@ -1,11 +1,11 @@
 package com.grab.grabwebapp.repository;
 
-import com.grab.grabwebapp.entity.User;
+import com.grab.grabwebapp.entity.GrabUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends JpaRepository<User, Integer> {
-    Optional<User> findByUsername(String username);
-    Boolean existByUsername(String username);
+public interface UserRepository extends JpaRepository<GrabUser, Integer> {
+    Optional<GrabUser> findByUsername(String username);
+    Boolean existsByUsername(String username);
 }

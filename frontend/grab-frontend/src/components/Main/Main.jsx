@@ -3,7 +3,6 @@ import './Main.css'
 import Box from '@mui/material/Box';
 import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 function Main() {
-    console.log(import.meta.env.VITE_MAPBOX_ACCESS_TOKEN)
     mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN
     const mapContainer = useRef(null);
     const map = useRef(null);
@@ -23,7 +22,7 @@ function Main() {
 
     return (
         <>
-            <Box height="0.85">
+            <Box height="0.9">
                 <div ref={mapContainer} className="map-container" />
             </Box>
         </>

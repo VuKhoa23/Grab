@@ -6,6 +6,9 @@ import mapboxgl from 'mapbox-gl'; // eslint-disable-line import/no-webpack-loade
 import Stomp from 'stompjs'
 import SockJS from 'sockjs-client/dist/sockjs';
 import { List, ListItem, ListItemText } from '@mui/material';
+import './Main.css'
+
+
 function Main() {
     mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN
     const mapContainer = useRef(null);
@@ -63,7 +66,7 @@ function Main() {
     console.log(messages)
 
     return (
-        <>
+        <Box className='main-container'>
             <Box height="0.8">
                 <div ref={mapContainer} className="map-container" />
             </Box>
@@ -78,7 +81,7 @@ function Main() {
                 </List>
                 <Button onClick={sendMessage}>Send Message</Button>
             </Box>
-        </>
+        </Box>
     )
 }
 

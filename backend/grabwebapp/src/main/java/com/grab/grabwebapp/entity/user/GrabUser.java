@@ -1,5 +1,6 @@
-package com.grab.grabwebapp.entity;
+package com.grab.grabwebapp.entity.user;
 
+import com.grab.grabwebapp.entity.Role;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;

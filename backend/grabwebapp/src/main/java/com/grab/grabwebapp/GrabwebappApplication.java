@@ -10,5 +10,4 @@ public class GrabwebappApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(GrabwebappApplication.class, args);
 	}
-
 }

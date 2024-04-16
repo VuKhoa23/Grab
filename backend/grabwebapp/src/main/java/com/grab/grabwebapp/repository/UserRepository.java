@@ -1,6 +1,6 @@
 package com.grab.grabwebapp.repository;
 
-import com.grab.grabwebapp.entity.GrabUser;
+import com.grab.grabwebapp.entity.user.GrabUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

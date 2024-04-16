@@ -1,6 +1,6 @@
 package com.grab.grabwebapp.security;
 
-import com.grab.grabwebapp.entity.GrabUser;
+import com.grab.grabwebapp.entity.user.GrabUser;
 import com.grab.grabwebapp.entity.Role;
 import com.grab.grabwebapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -159,7 +159,7 @@ function Header() {
               <Box sx={{ flexGrow: 0 }}>
                 <Stack direction={'row'} spacing={2} alignItems={'center'}>
                   <Button onClick={() => navigate('/login')} variant="contained" color='success'>Log in</Button>
-                  <Button variant="contained" color='success'>Sign up</Button>
+                  <Button onClick={() => navigate('/signup')} variant="contained" color='success'>Sign up</Button>
                 </Stack>
               </Box>
             )}

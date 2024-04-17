@@ -2,6 +2,7 @@ import { useRoutes } from 'react-router-dom'
 import Main from '../Main/Main';
 import Homelayout from '../Layout/Homelayout';
 import Login from '../Login/Login';
+import Signup from '../Signup/Signup';
 
 
 export default function Router() {
@@ -17,7 +18,11 @@ export default function Router() {
                 {
                     path: '/login',
                     element: <Login />
-                }
+                },
+                {
+                    path: '/signup',
+                    element: <Signup />
+                },
             ]
 
         }

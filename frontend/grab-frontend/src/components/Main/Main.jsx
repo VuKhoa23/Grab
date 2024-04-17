@@ -40,6 +40,10 @@ function Main() {
                 const receivedMessage = JSON.parse(message.body)
                 setMessages((prevMessages) => [...prevMessages, receivedMessage])
             })
+
+            client.subscribe("/topic/messages/all", (message) => {
+                console.log("Chat all channel")
+            })
         })
 
         setStompClient(client);

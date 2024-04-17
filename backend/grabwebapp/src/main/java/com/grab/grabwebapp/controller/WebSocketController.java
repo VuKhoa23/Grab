@@ -16,7 +16,7 @@ public class WebSocketController {
     @MessageMapping("/chat")
     public void receiveMsg(@Payload ClientMessage message){
         // add logic before send messages to subscribers
-        simpMessagingTemplate.convertAndSend("/topic/messages/"  + User.getUsername(), message);
+        simpMessagingTemplate.convertAndSend("/topic/messages/", message);
         simpMessagingTemplate.convertAndSend("/topic/messages/all", message);
     }
 }

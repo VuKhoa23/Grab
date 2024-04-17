@@ -49,7 +49,6 @@ function Main() {
     }, []);
 
     const sendMessage = () => {
-        console.log(message)
         if (message.length > 0) {
             const clientMessage = {
                 username,
@@ -59,8 +58,6 @@ function Main() {
             setMessage("Hello " + Date.now())
         }
     }
-
-    console.log(messages)
 
     return (
         <>

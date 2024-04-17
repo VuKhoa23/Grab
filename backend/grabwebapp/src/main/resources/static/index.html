@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <script src="/webjars/jquery/dist/jquery.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/index.js"></script>
+</head>
+<body>
+<div id="main-content">
+    <div>
+        <form id="operator">
+            <div>
+                <label>What is your name?</label>
+                <input type="text" id="name_operator" placeholder="Your name here...">
+            </div>
+            <button id="send_operator" type="submit">Send</button>
+        </form>
+        <form id="customer">
+            <div>
+                <label>What is your name?</label>
+                <input type="text" id="name_customer" placeholder="Your name here...">
+            </div>
+            <button id="send_customer" type="submit">Send</button>
+        </form>
+    </div>
+</div>
+<div>
+    <label>Message from server operator: </label><span id="message_operator"></span>
+</div>
+<div>
+    <label>Message from server customer: </label><span id="message_customer"></span>
+</div>
+</body>
+</html>

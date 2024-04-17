@@ -13,4 +13,16 @@ public class WebSocketController {
     public ClientMessage sendMessage(@Payload ClientMessage message){
         return message;
     }
+
+    @MessageMapping("/customer-ws")
+    @SendTo("/topic/operator")
+    public String sendMessageToOperator(String username){
+        return "Hello operator " + username;
+    }
+
+    @MessageMapping("/operator-ws")
+    @SendTo("/topic/customer")
+    public String sendMessageToCustomer(String username){
+        return "Hello customer " + username;
+    }
 }

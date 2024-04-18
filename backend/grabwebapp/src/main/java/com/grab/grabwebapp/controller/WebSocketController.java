@@ -25,4 +25,10 @@ public class WebSocketController {
     public String sendMessageToCustomer(String username){
         return "Hello customer " + username;
     }
+
+    @MessageMapping("/driver-ws")
+    @SendTo("/topic/driver")
+    public String sendMessageToDriver(String username){
+        return "Hello driver " + username;
+    }
 }

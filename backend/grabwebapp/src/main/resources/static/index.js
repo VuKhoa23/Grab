@@ -1,4 +1,6 @@
-var stompClient = null;
+var customerStompClient = null;
+var operatorStompClient = null;
+var driverStompClient = null;
 
 $(document).ready(function() {
     connect();
@@ -7,11 +9,15 @@ $(document).ready(function() {
 function connect() {
     // For customer
     var customerSocket = new SockJS('/customer-ws');
-    var customerStompClient = Stomp.over(customerSocket);
+    customerStompClient = Stomp.over(customerSocket);
 
     // For operator
     var operatorSocket = new SockJS('/operator-ws');
-    var operatorStompClient = Stomp.over(operatorSocket);
+    operatorStompClient = Stomp.over(operatorSocket);
+
+    // For driver
+    var driverSocket = new SockJS('/driver-ws');
+    driverStompClient = Stomp.over(driverSocket);
 
     customerStompClient.connect({}, function() {
         console.log('Customer WebSocket is connected');
@@ -27,20 +33,30 @@ function connect() {
         });
     });
 
-    // Assign the stompClient variable to one of the clients (optional)
-    stompClient = customerStompClient; // Or operatorStompClient, depending on your preference
+    driverStompClient.connect({}, function() {
+        console.log('Driver WebSocket is connected');
+        driverStompClient.subscribe('/topic/driver', function(message) {
+            $("#message_driver").text(message.body);
+        });
+    });
 }
 
 $(function() {
     $("#operator").on('submit', function(e) {
         e.preventDefault();
         var operatorName = $("#name_operator").val();
-        stompClient.send("/app/operator-ws", {}, operatorName);
+        customerStompClient.send("/app/operator-ws", {}, operatorName);
     });
 
     $("#customer").on('submit', function(e) {
         e.preventDefault();
         var customerName = $("#name_customer").val();
-        stompClient.send("/app/customer-ws", {}, customerName);
+        operatorStompClient.send("/app/customer-ws", {}, customerName);
+    });
+
+    $("#driver").on('submit', function(e) {
+        e.preventDefault();
+        var driverName = $("#name_driver").val();
+        customerStompClient.send("/app/driver-ws", {}, driverName);
     });
 });

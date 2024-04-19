@@ -26,4 +26,12 @@ public class OperatorServices {
     public List<Operator> getAllOperators() {
         return operatorList;
     }
+    public Operator getAvailableOperator(){
+        for(Operator operator : operatorList){
+            if(operator.getState() == 0){
+                return operator;
+            }
+        }
+        return null;
+    }
 }

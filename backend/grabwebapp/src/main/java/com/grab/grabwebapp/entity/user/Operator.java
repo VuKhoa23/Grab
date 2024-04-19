@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class Operator extends GrabUser {
-    private String state;   // free / busy
+    private int state;   // free: 0 / busy: 1
 }

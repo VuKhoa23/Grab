@@ -12,21 +12,14 @@
     <div>
         <form id="operator">
             <div>
-                <label>What is your name?</label>
+                <label>What is your name operator?</label>
                 <input type="text" id="name_operator" placeholder="Your name here...">
             </div>
             <button id="send_operator" type="submit">Send</button>
         </form>
-        <form id="customer">
-            <div>
-                <label>What is your name?</label>
-                <input type="text" id="name_customer" placeholder="Your name here...">
-            </div>
-            <button id="send_customer" type="submit">Send</button>
-        </form>
         <form id="driver">
             <div>
-                <label>What is your name?</label>
+                <label>What is your driver?</label>
                 <input type="text" id="name_driver" placeholder="Your name here...">
             </div>
             <button id="send_driver" type="submit">Send</button>
@@ -34,13 +27,10 @@
     </div>
 </div>
 <div>
-    <label>Message from server operator: </label><span id="message_operator"></span>
+    <label>Message from customer to operator: </label><span id="message_toOperator"></span>
 </div>
 <div>
-    <label>Message from server customer: </label><span id="message_customer"></span>
-</div>
-<div>
-    <label>Message from server customer: </label><span id="message_driver"></span>
+    <label>Message from operator to driver: </label><span id="message_toDriver"></span>
 </div>
 </body>
 </html>

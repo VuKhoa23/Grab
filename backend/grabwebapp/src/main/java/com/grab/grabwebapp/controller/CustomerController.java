@@ -20,7 +20,7 @@ public class CustomerController {
     @PostMapping("/bookCar")
     private ResponseEntity<String> bookCar(@RequestBody BookingInfoDTO bookingInfoDTO){
         System.out.println("Start");
-        messagingTemplate.convertAndSend("/app/customer-ws", "Car booked");
+        messagingTemplate.convertAndSend("/app/driver-ws", "Car booked");
         System.out.println("End");
         return new ResponseEntity<>("Car booked", HttpStatus.OK);
     }
